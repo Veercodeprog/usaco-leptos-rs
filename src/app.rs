@@ -37,7 +37,7 @@ pub fn App() -> impl IntoView {
         // id=leptos means cargo-leptos will hot-reload this stylesheet
         <Stylesheet id="leptos" href="/pkg/usaco-clone.css" />
         <link data-trunk rel="taliwind-css" href="style/input.css" />
-        <Stylesheet href="/tailwind.css" />
+        // <Stylesheet href="/tailwind.css" />
         <SiteHeader />
         // sets the document title
         <Title text="Welcome to Leptos" />
@@ -62,6 +62,9 @@ fn HomePage() -> impl IntoView {
 
     view! {
         <h1>"Welcome to Leptos!"</h1>
-        <button on:click=on_click>"Click Me: " {count}</button>
+        <button class="bg-red-500 rounded text-white" on:click=on_click>
+            "Click Me: "
+            {count}
+        </button>
     }
 }
