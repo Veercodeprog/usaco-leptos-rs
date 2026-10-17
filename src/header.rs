@@ -100,7 +100,7 @@ pub fn SiteHeader() -> impl IntoView {
                                     </svg>
 
                                     <span class="ml-3 text-3xl font-bold tracking-tight text-black">
-                                        "USACO Guide"
+                                        "My Guide"
                                     </span>
 
                                 </div>
@@ -143,7 +143,7 @@ pub fn SiteHeader() -> impl IntoView {
                                         hover:text-gray-900
                                         "
                                     >
-                                        <span>"Sections"</span>
+                                        <span>"DSA"</span>
 
                                         <svg
                                             width="22"
@@ -184,7 +184,7 @@ pub fn SiteHeader() -> impl IntoView {
                                             href="/general"
                                             class="block px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-100"
                                         >
-                                            "General"
+                                            "Rust"
                                         </a>
 
                                         <a

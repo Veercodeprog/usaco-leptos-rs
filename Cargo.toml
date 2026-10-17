@@ -55,7 +55,7 @@ style-file = "style/output/output.css"
 # Assets source dir. All files found here will be copied and synchronized to site-root.
 # The assets-dir cannot have a sub directory with the same name/path as site-pkg-dir.
 #
-tailwind-input-file = "style/input.css"
+# tailwind-input-file = "style/input.css"
 # Optional. Env: LEPTOS_ASSETS_DIR.
 assets-dir = "public"
 
