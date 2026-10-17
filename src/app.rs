@@ -6,8 +6,9 @@ use leptos_router::{
 };
 #[path = "header.rs"]
 mod header;
-
+mod home;
 use header::SiteHeader;
+use home::HomePage;
 
 pub fn shell(options: LeptosOptions) -> impl IntoView {
     view! {
@@ -61,6 +62,7 @@ fn HomePage() -> impl IntoView {
     let on_click = move |_| *count.write() += 1;
 
     view! {
+        <HomePage />
         <h1>"Welcome to Leptos!"</h1>
         <button class="bg-red-500 rounded text-white" on:click=on_click>
             "Click Me: "
