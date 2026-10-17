@@ -1,5 +1,8 @@
+use crate::app::IntoView;
+use leptos::prelude::*;
+
 #[component]
-fn HomePage() -> impl IntoView {
+pub fn HomePagee() -> impl IntoView {
     view! {
         <div class="min-h-screen bg-slate-50 text-slate-900">
 
@@ -24,10 +27,10 @@ fn HomePage() -> impl IntoView {
                         <a
                             href="#dsa"
                             class="inline-flex items-center justify-center rounded-lg
-                             bg-indigo-600 px-5 py-3 text-sm font-semibold
-                             text-white transition hover:bg-indigo-700
-                             focus-visible:outline-2 focus-visible:outline-offset-4
-                             focus-visible:outline-indigo-600"
+                            bg-indigo-600 px-5 py-3 text-sm font-semibold
+                            text-white transition hover:bg-indigo-700
+                            focus-visible:outline-2 focus-visible:outline-offset-4
+                            focus-visible:outline-indigo-600"
                         >
                             "Explore DSA"
                             <span aria-hidden="true" class="ml-2">
@@ -38,11 +41,11 @@ fn HomePage() -> impl IntoView {
                         <a
                             href="#projects"
                             class="inline-flex items-center justify-center rounded-lg
-                             border border-slate-300 bg-white px-5 py-3
-                             text-sm font-semibold text-slate-700 transition
-                             hover:border-slate-400 hover:bg-slate-50
-                             focus-visible:outline-2 focus-visible:outline-offset-4
-                             focus-visible:outline-indigo-600"
+                            border border-slate-300 bg-white px-5 py-3
+                            text-sm font-semibold text-slate-700 transition
+                            hover:border-slate-400 hover:bg-slate-50
+                            focus-visible:outline-2 focus-visible:outline-offset-4
+                            focus-visible:outline-indigo-600"
                         >
                             "Browse Projects"
                         </a>
@@ -76,7 +79,7 @@ fn HomePage() -> impl IntoView {
                             label="01"
                             title="Arrays & Strings"
                             description="Practice traversal, prefix sums, two pointers,
-                             sliding windows, and string manipulation."
+                            sliding windows, and string manipulation."
                             tags="Arrays · Strings · Two Pointers"
                             action="Explore problems"
                         />
@@ -86,7 +89,7 @@ fn HomePage() -> impl IntoView {
                             label="02"
                             title="Linked Lists"
                             description="Understand pointer manipulation through
-                             reversals, cycle detection, and list merging."
+                            reversals, cycle detection, and list merging."
                             tags="Pointers · Fast & Slow · Reversal"
                             action="Explore problems"
                         />
@@ -96,7 +99,7 @@ fn HomePage() -> impl IntoView {
                             label="03"
                             title="Stacks & Queues"
                             description="Work through expression parsing, monotonic
-                             stacks, deques, and processing sequences."
+                            stacks, deques, and processing sequences."
                             tags="Stacks · Queues · Monotonic Patterns"
                             action="Explore problems"
                         />
@@ -106,7 +109,7 @@ fn HomePage() -> impl IntoView {
                             label="04"
                             title="Trees & Graphs"
                             description="Explore connected structures with traversals,
-                             search, shortest paths, and tree algorithms."
+                            search, shortest paths, and tree algorithms."
                             tags="DFS · BFS · Shortest Paths"
                             action="Explore problems"
                         />
@@ -116,7 +119,7 @@ fn HomePage() -> impl IntoView {
                             label="05"
                             title="Dynamic Programming"
                             description="Break problems into reusable subproblems
-                             using memoization and tabulation."
+                            using memoization and tabulation."
                             tags="States · Transitions · Optimization"
                             action="Explore problems"
                         />
@@ -126,7 +129,7 @@ fn HomePage() -> impl IntoView {
                             label="06"
                             title="Searching & Sorting"
                             description="Practice binary search, ordering techniques,
-                             and divide-and-conquer approaches."
+                            and divide-and-conquer approaches."
                             tags="Binary Search · Sorting · Divide & Conquer"
                             action="Explore problems"
                         />
@@ -157,7 +160,7 @@ fn HomePage() -> impl IntoView {
                             label="UI"
                             title="Frontend Development"
                             description="Build responsive interfaces, interactive
-                             dashboards, and reusable UI components."
+                            dashboards, and reusable UI components."
                             tags="Layouts · Components · Interactivity"
                             action="Browse projects"
                         />
@@ -167,7 +170,7 @@ fn HomePage() -> impl IntoView {
                             label="API"
                             title="Backend Development"
                             description="Create APIs and services with authentication,
-                             database storage, and background processing."
+                            database storage, and background processing."
                             tags="APIs · Databases · Services"
                             action="Browse projects"
                         />
@@ -177,7 +180,7 @@ fn HomePage() -> impl IntoView {
                             label="WEB"
                             title="Full-Stack Applications"
                             description="Connect frontend and backend systems to build
-                             complete applications from end to end."
+                            complete applications from end to end."
                             tags="Integration · Auth · Deployment"
                             action="Browse projects"
                         />
@@ -187,7 +190,7 @@ fn HomePage() -> impl IntoView {
                             label="RS"
                             title="Rust & Systems"
                             description="Explore ownership and concurrency through
-                             command-line tools and systems projects."
+                            command-line tools and systems projects."
                             tags="Rust · CLI · Concurrency"
                             action="Browse projects"
                         />
@@ -197,7 +200,7 @@ fn HomePage() -> impl IntoView {
                             label="DATA"
                             title="Data & Visualization"
                             description="Transform datasets into useful insights with
-                             processing pipelines and visual dashboards."
+                            processing pipelines and visual dashboards."
                             tags="Processing · Analytics · Charts"
                             action="Browse projects"
                         />
@@ -207,7 +210,7 @@ fn HomePage() -> impl IntoView {
                             label="DEV"
                             title="Developer Tools"
                             description="Build tools that automate repetitive work
-                             and improve everyday development workflows."
+                            and improve everyday development workflows."
                             tags="Automation · Tooling · Productivity"
                             action="Browse projects"
                         />
@@ -232,18 +235,18 @@ fn HomeCategoryCard(
         <a
             href=href
             class="group flex h-full flex-col rounded-xl border border-slate-200
-             bg-white p-6 transition
-             hover:-translate-y-1 hover:border-indigo-300 hover:shadow-md
-             motion-reduce:transform-none motion-reduce:transition-none
-             focus-visible:outline-2 focus-visible:outline-offset-4
-             focus-visible:outline-indigo-600"
+            bg-white p-6 transition
+            hover:-translate-y-1 hover:border-indigo-300 hover:shadow-md
+            motion-reduce:transform-none motion-reduce:transition-none
+            focus-visible:outline-2 focus-visible:outline-offset-4
+            focus-visible:outline-indigo-600"
         >
             <div class="flex items-center justify-between gap-4">
                 <span
                     aria-hidden="true"
                     class="inline-flex h-12 min-w-12 items-center justify-center
-                     rounded-lg bg-indigo-50 px-2 font-mono text-sm
-                     font-bold text-indigo-600"
+                    rounded-lg bg-indigo-50 px-2 font-mono text-sm
+                    font-bold text-indigo-600"
                 >
                     {label}
                 </span>
@@ -251,7 +254,7 @@ fn HomeCategoryCard(
                 <span
                     aria-hidden="true"
                     class="text-xl text-slate-400 transition
-                     group-hover:text-indigo-600"
+                    group-hover:text-indigo-600"
                 >
                     "↗"
                 </span>

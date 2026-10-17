@@ -6,9 +6,10 @@ use leptos_router::{
 };
 #[path = "header.rs"]
 mod header;
-mod home;
 use header::SiteHeader;
-use home::HomePage;
+#[path = "home.rs"]
+mod home;
+use home::HomePagee;
 
 pub fn shell(options: LeptosOptions) -> impl IntoView {
     view! {
