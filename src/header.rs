@@ -184,7 +184,7 @@ pub fn SiteHeader() -> impl IntoView {
                                             href="/general"
                                             class="block px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-100"
                                         >
-                                            "Rust"
+                                            "Blind 75"
                                         </a>
 
                                         <a
