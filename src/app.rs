@@ -9,8 +9,8 @@ mod header;
 use header::SiteHeader;
 #[path = "home.rs"]
 mod home;
+use crate::categories::CategoriesPage;
 use home::HomePagee;
-
 pub fn shell(options: LeptosOptions) -> impl IntoView {
     view! {
         <!DOCTYPE html>
@@ -268,6 +268,7 @@ pub fn App() -> impl IntoView {
                             }
                         }
                     />
+                    <Route path=StaticSegment("categories") view=CategoriesPage />
                 </Routes>
             </main>
         </Router>

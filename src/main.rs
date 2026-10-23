@@ -1,4 +1,3 @@
-
 #[cfg(feature = "ssr")]
 #[tokio::main]
 async fn main() {
@@ -7,6 +6,20 @@ async fn main() {
     use leptos::prelude::*;
     use leptos_axum::{generate_route_list, LeptosRoutes};
     use usaco_clone::app::*;
+    // Load a local .env file if present.
+    // Existing process environment variables take precedence.
+    // In production, configure these variables in your hosting platform.
+    dotenvy::dotenv().ok();
+    // Fail at startup rather than on the first page request.
+    for key in ["STRAPI_BASE_URL", "STRAPI_API_TOKEN"] {
+        let value = std::env::var(key)
+            .unwrap_or_else(|_| panic!("Missing required environment variable: {key}"));
+
+        assert!(
+            !value.trim().is_empty(),
+            "Environment variable {key} must not be empty"
+        );
+    }
 
     let conf = get_configuration(None).unwrap();
     let addr = conf.leptos_options.site_addr;
