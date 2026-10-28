@@ -1,5 +1,6 @@
 pub mod app;
 pub mod categories;
+pub mod components;
 pub mod strapi;
 #[cfg(feature = "hydrate")]
 #[wasm_bindgen::prelude::wasm_bindgen]
