@@ -1,16 +1,13 @@
+use crate::components::Navbar;
+use crate::layouts::content_layout::ContentLayout;
+use crate::pages::categories::CategoriesPage;
+use crate::pages::home::HomePagee;
 use leptos::prelude::*;
 use leptos_meta::{provide_meta_context, MetaTags, Stylesheet, Title};
 use leptos_router::{
     components::{Route, Router, Routes},
     StaticSegment,
 };
-#[path = "header.rs"]
-mod header;
-use header::SiteHeader;
-#[path = "home.rs"]
-mod home;
-use crate::categories::CategoriesPage;
-use home::HomePagee;
 pub fn shell(options: LeptosOptions) -> impl IntoView {
     view! {
         <!DOCTYPE html>
@@ -66,7 +63,7 @@ pub fn App() -> impl IntoView {
 
         <Router>
             // Shared header: visible on every route.
-            <SiteHeader />
+            <Navbar />
 
             // Only this content changes when navigating.
             <main class="min-h-screen bg-slate-50">

@@ -1,7 +1,8 @@
 pub mod app;
-pub mod categories;
 pub mod components;
-pub mod strapi;
+pub mod layouts;
+pub mod pages;
+pub mod services;
 #[cfg(feature = "hydrate")]
 #[wasm_bindgen::prelude::wasm_bindgen]
 pub fn hydrate() {

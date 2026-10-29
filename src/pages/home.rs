@@ -1,5 +1,3 @@
-use crate::app::IntoView;
-use crate::components::SiteSidebar;
 use leptos::prelude::*;
 
 #[component]

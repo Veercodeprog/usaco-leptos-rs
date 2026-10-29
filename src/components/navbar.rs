@@ -1,7 +1,7 @@
 use leptos::prelude::*;
 
 #[component]
-pub fn SiteHeader() -> impl IntoView {
+pub fn Navbar() -> impl IntoView {
     let mobile_open = RwSignal::new(false);
 
     view! {

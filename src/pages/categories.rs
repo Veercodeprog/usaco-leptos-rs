@@ -1,7 +1,6 @@
 use leptos::prelude::*;
 
-use crate::strapi::get_categories;
-
+use crate::services::strapi::get_categories;
 #[component]
 pub fn CategoriesPage() -> impl IntoView {
     let (page, set_page) = signal(1_u32);
