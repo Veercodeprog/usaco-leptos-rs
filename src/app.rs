@@ -280,35 +280,12 @@ fn HomePage() -> impl IntoView {
 
 /// Temporary reusable content page.
 /// Replace these topic lists with your real content later.
+
 #[component]
 fn ContentPage(
     title: &'static str,
     description: &'static str,
     topics: Vec<&'static str>,
 ) -> impl IntoView {
-    view! {
-        <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-            <div class="border-b border-slate-200 pb-6">
-                <h1 class="text-3xl font-bold tracking-tight text-slate-900">{title}</h1>
-
-                <p class="mt-3 text-lg text-slate-600">{description}</p>
-            </div>
-
-            <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {topics
-                    .into_iter()
-                    .map(|topic| {
-                        view! {
-                            <article class="rounded-xl border border-slate-200 bg-white p-6">
-                                <h2 class="text-lg font-semibold text-slate-900">{topic}</h2>
-                                <p class="mt-2 text-sm text-slate-500">
-                                    "Add lessons, explanations, and problems here."
-                                </p>
-                            </article>
-                        }
-                    })
-                    .collect_view()}
-            </div>
-        </section>
-    }
+    view! { <ContentLayout title=title description=description topics=topics /> }
 }
