@@ -1,5 +1,6 @@
 use crate::components::Navbar;
 use crate::layouts::content_layout::ContentLayout;
+use crate::layouts::main_layout::MainLayout;
 use crate::pages::categories::CategoriesPage;
 use crate::pages::home::HomePagee;
 use leptos::prelude::*;
@@ -62,26 +63,21 @@ pub fn App() -> impl IntoView {
         <Title text="My Guide" />
 
         <Router>
-            // Shared header: visible on every route.
             <Navbar />
 
-            // Only this content changes when navigating.
-            <main class="min-h-screen bg-slate-50">
-                <Routes fallback=|| {
-                    view! {
-                        <div class="mx-auto max-w-7xl px-6 py-12">
-                            <h1 class="text-3xl font-bold">"Page not found"</h1>
-                            <p class="mt-3 text-slate-600">"This page has not been created yet."</p>
-                        </div>
-                    }
-                }>
-                    <Route path=StaticSegment("") view=HomePage />
+            <Routes fallback=|| "Page not found.".into_view()>
 
-                    <Route
-                        path=StaticSegment("general")
-                        view=move || {
-                            view! {
-                                <ContentPage
+                <Route
+                    path=StaticSegment("general")
+                    view=move || {
+                        view! {
+                            <MainLayout sidebar_items=vec![
+                                "Input and output",
+                                "Ownership and borrowing",
+                                "Vectors and strings",
+                                "Collections",
+                            ]>
+                                <ContentLayout
                                     title="Rust"
                                     description="Learn Rust fundamentals for problem solving."
                                     topics=vec![
@@ -91,183 +87,12 @@ pub fn App() -> impl IntoView {
                                         "Collections",
                                     ]
                                 />
-                            }
+                            </MainLayout>
                         }
-                    />
+                    }
+                />
 
-                    <Route
-                        path=StaticSegment("bronze")
-                        view=move || {
-                            view! {
-                                <ContentPage
-                                    title="Bronze"
-                                    description="Start with fundamental problem-solving techniques."
-                                    topics=vec![
-                                        "Simulation",
-                                        "Complete search",
-                                        "Sorting",
-                                        "Greedy basics",
-                                    ]
-                                />
-                            }
-                        }
-                    />
-
-                    <Route
-                        path=StaticSegment("silver")
-                        view=move || {
-                            view! {
-                                <ContentPage
-                                    title="Silver"
-                                    description="Explore intermediate algorithms and data structures."
-                                    topics=vec![
-                                        "Prefix sums",
-                                        "Binary search",
-                                        "Two pointers",
-                                        "Graph traversal",
-                                    ]
-                                />
-                            }
-                        }
-                    />
-
-                    <Route
-                        path=StaticSegment("gold")
-                        view=move || {
-                            view! {
-                                <ContentPage
-                                    title="Gold"
-                                    description="Study more advanced problem-solving techniques."
-                                    topics=vec![
-                                        "Dynamic programming",
-                                        "Shortest paths",
-                                        "Disjoint set union",
-                                        "Tree algorithms",
-                                    ]
-                                />
-                            }
-                        }
-                    />
-
-                    <Route
-                        path=StaticSegment("plat")
-                        view=move || {
-                            view! {
-                                <ContentPage
-                                    title="Platinum"
-                                    description="Explore advanced algorithms and data structures."
-                                    topics=vec![
-                                        "Segment trees",
-                                        "Range queries",
-                                        "Advanced tree techniques",
-                                    ]
-                                />
-                            }
-                        }
-                    />
-
-                    <Route
-                        path=StaticSegment("adv")
-                        view=move || {
-                            view! {
-                                <ContentPage
-                                    title="Advanced"
-                                    description="Explore additional advanced topics."
-                                    topics=vec![
-                                        "Advanced dynamic programming",
-                                        "String algorithms",
-                                        "Mathematical algorithms",
-                                    ]
-                                />
-                            }
-                        }
-                    />
-
-                    <Route
-                        path=StaticSegment("problems")
-                        view=move || {
-                            view! {
-                                <ContentPage
-                                    title="Problems"
-                                    description="Browse practice problems by topic and difficulty."
-                                    topics=vec![
-                                        "Arrays and strings",
-                                        "Linked lists",
-                                        "Trees and graphs",
-                                        "Dynamic programming",
-                                    ]
-                                />
-                            }
-                        }
-                    />
-
-                    <Route
-                        path=StaticSegment("groups")
-                        view=move || {
-                            view! {
-                                <ContentPage
-                                    title="Groups"
-                                    description="Organize your learning with study groups."
-                                    topics=vec!["Your groups", "Group assignments"]
-                                />
-                            }
-                        }
-                    />
-
-                    <Route
-                        path=StaticSegment("editor")
-                        view=move || {
-                            view! {
-                                <ContentPage
-                                    title="Editor"
-                                    description="Your content editor will appear here."
-                                    topics=vec!["Create content", "Edit existing content"]
-                                />
-                            }
-                        }
-                    />
-
-                    <Route
-                        path=StaticSegment("contact")
-                        view=move || {
-                            view! {
-                                <ContentPage
-                                    title="Contact Us"
-                                    description="Add your contact details or a contact form here."
-                                    topics=vec![]
-                                />
-                            }
-                        }
-                    />
-
-                    <Route
-                        path=StaticSegment("settings")
-                        view=move || {
-                            view! {
-                                <ContentPage
-                                    title="Settings"
-                                    description="Your account preferences will appear here."
-                                    topics=vec![]
-                                />
-                            }
-                        }
-                    />
-
-                    <Route
-                        path=StaticSegment("login")
-                        view=move || {
-                            view! {
-                                <ContentPage
-                                    title="Sign In"
-                                    description="Your sign-in form will appear here."
-                                    topics=vec![]
-                                />
-                            }
-                        }
-                    />
-                    <Route path=StaticSegment("categories") view=CategoriesPage />
-                </Routes>
-            </main>
+            </Routes>
         </Router>
     }
 }
