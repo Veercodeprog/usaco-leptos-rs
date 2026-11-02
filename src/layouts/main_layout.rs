@@ -1,20 +1,16 @@
-use leptos::prelude::*;
-
 use crate::components::SiteSidebar;
+use leptos::prelude::*;
 
 #[component]
 pub fn MainLayout(children: Children, sidebar_items: Vec<&'static str>) -> impl IntoView {
     view! {
         <div class="flex w-full min-h-screen">
 
-            // LEFT SIDEBAR
+            // Left navigation
             <aside class="
-            hidden
-            lg:block
-            w-64
-            shrink-0
-            border-r
-            border-slate-200
+            hidden lg:block
+            w-64 shrink-0
+            border-r border-slate-200
             bg-white
             ">
                 <div class="
@@ -28,15 +24,11 @@ pub fn MainLayout(children: Children, sidebar_items: Vec<&'static str>) -> impl 
                 </div>
             </aside>
 
-            // RIGHT CONTENT
+            // Main learning content
             <main class="
-            min-w-0
-            flex-1
-            w-full
+            min-w-0 flex-1
             bg-slate-50
-            px-4
-            py-8
-            sm:px-6
+            px-6 py-8
             lg:px-10
             ">{children()}</main>
 
