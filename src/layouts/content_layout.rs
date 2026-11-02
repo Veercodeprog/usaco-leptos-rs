@@ -7,8 +7,7 @@ pub fn ContentLayout(
     topics: Vec<&'static str>,
 ) -> impl IntoView {
     view! {
-        <div class="mx-auto max-w-5xl">
-
+        <div class="w-full max-w-none">
             <div class="border-b border-slate-200 pb-6">
                 <h1 class="text-3xl font-bold tracking-tight text-slate-900">{title}</h1>
 

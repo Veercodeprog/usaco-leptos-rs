@@ -4,17 +4,15 @@ use crate::components::SiteSidebar;
 
 #[component]
 pub fn MainLayout(children: Children, sidebar_items: Vec<&'static str>) -> impl IntoView {
-    let items = sidebar_items.clone();
-
     view! {
-        <div class="mx-auto flex max-w-[1600px] min-h-screen">
+        <div class="flex w-full min-h-screen">
 
             // LEFT SIDEBAR
             <aside class="
             hidden
             lg:block
-            lg:w-64
-            lg:shrink-0
+            w-64
+            shrink-0
             border-r
             border-slate-200
             bg-white
@@ -22,18 +20,19 @@ pub fn MainLayout(children: Children, sidebar_items: Vec<&'static str>) -> impl 
                 <div class="
                 sticky
                 top-0
-                h-[calc(100vh-5rem)]
+                h-screen
                 overflow-y-auto
                 p-4
                 ">
-                    <SiteSidebar items=items />
+                    <SiteSidebar items=sidebar_items />
                 </div>
             </aside>
 
-            // MAIN CONTENT
+            // RIGHT CONTENT
             <main class="
             min-w-0
             flex-1
+            w-full
             bg-slate-50
             px-4
             py-8
